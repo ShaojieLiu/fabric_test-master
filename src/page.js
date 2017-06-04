@@ -9,9 +9,7 @@ import './page.css';
 let svgLoader = null
 let fabricArr = null;
 
-let Page
-
-(async () => {
+( () => {
     let fabric = window.fabric
 
     let asyncSvgLoader = () => {
@@ -21,7 +19,7 @@ let Page
             })
         })
     }
-    svgLoader = await asyncSvgLoader()
+    svgLoader = asyncSvgLoader()
     console.log(svgLoader)
 
     let rect = new fabric.Rect({
@@ -47,71 +45,72 @@ let Page
     let items = [rect, text, circ]
     fabricArr = items
 
-    class Page extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                debug: true,
-                path: [],
-                future: fabricArr
-            }
-        }
+} )()
 
-        render() {
-            let template =
-                <ul className="list">
-                    {this.state.path.map(t => (
-                        <li key={Math.random()}> {t.type} </li>
-                    ))}
-                </ul>;
-            let debug = this.state.debug ? template : ''
-            return (
-                <div className="page">
-                    <btn className="btn btn-prev" onClick={this.handlePrev}>PREV BTN</btn>
-                    <btn className="btn btn-next" onClick={this.handleNext}>NEXT BTN</btn>
-                    <div className="window">
-                        { debug }
-
-                        <Fabric className="dis" ref="fabric" />
-                    </div>
-                </div>
-            );
-        }
-
-        handleNext = (e) => {
-            let f = this.state.future
-            //console.log(f, item)
-            let item = f[f.length-1]
-            if (item) {
-                this.setState((prevState) => {
-                    let future = prevState.future.slice(0, -1)
-                    let path = prevState.path.concat(item)
-                    this.refs.fabric.add(item)
-                    return {path, future}
-                })
-            }
-
-        }
-
-        handlePrev = (e) => {
-            let path = this.state.path
-            let item = path[path.length-1]
-            this.state.future.unshift(item)
-            if (item) {
-                this.setState((prevState) => {
-                    prevState.path.pop()
-                    return {path: prevState.path}
-                })
-                this.refs.fabric.del(item)
-            }
-        }
-
-        componentDidUpdate = () => {
-            console.log(this.state.path, 'fabricArr', this.state.future.map((e) => e.type))
+class Page extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+            debug: true,
+            path: [],
+            future: fabricArr
         }
     }
 
-})()
+    render() {
+        let template =
+            <ul className="list">
+                {this.state.path.map(t => (
+                    <li key={Math.random()}> {t.type} </li>
+                ))}
+            </ul>;
+        let debug = this.state.debug ? template : ''
+        return (
+            <div className="page">
+                <btn className="btn btn-prev" onClick={this.handlePrev}>PREV BTN</btn>
+                <btn className="btn btn-next" onClick={this.handleNext}>NEXT BTN</btn>
+                <div className="window">
+                    { debug }
+
+                    <Fabric className="dis" ref="fabric" />
+                </div>
+            </div>
+        );
+    }
+
+    handleNext = (e) => {
+        let f = this.state.future
+        //console.log(f, item)
+        let item = f[0]
+        if (item) {
+            this.setState((prevState) => {
+                let future = prevState.future.slice(1)
+                let path = prevState.path.concat(item)
+                this.refs.fabric.add(item)
+                return {path, future}
+            })
+        }
+
+    }
+
+    handlePrev = (e) => {
+        let path = this.state.path
+        let item = path[path.length-1]
+        this.state.future.unshift(item)
+        if (item) {
+            this.setState((prevState) => {
+                prevState.path.pop()
+                return {path: prevState.path}
+            })
+            this.refs.fabric.del(item)
+        }
+    }
+
+    componentDidUpdate = () => {
+        console.log(this.state.path, 'fabricArr', this.state.future.map((e) => e.type))
+    }
+}
+
 module.exports = Page;
 
 //console.log(fabricArr.shift())

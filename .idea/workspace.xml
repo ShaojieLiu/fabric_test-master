@@ -24,11 +24,15 @@
       <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6671949">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.40412045">
+              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1496556592000" expanded="true" signature="3049:3051" placeholder="..." />
+                <element signature="e#277#467#0" expanded="false" />
+                <element signature="e#560#668#0" expanded="false" />
+                <element signature="e#719#762#0" expanded="false" />
+                <element signature="e#799#886#0" expanded="false" />
+                <marker date="1496588142000" expanded="true" signature="2791:2793" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -247,7 +251,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -285,11 +291,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6671949">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.40412045">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1496556592000" expanded="true" signature="3049:3051" placeholder="..." />
+            <element signature="e#277#467#0" expanded="false" />
+            <element signature="e#560#668#0" expanded="false" />
+            <element signature="e#719#762#0" expanded="false" />
+            <element signature="e#799#886#0" expanded="false" />
+            <marker date="1496588142000" expanded="true" signature="2791:2793" placeholder="..." />
           </folding>
         </state>
       </provider>
