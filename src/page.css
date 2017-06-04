@@ -1,0 +1,23 @@
+.window{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.list{
+    display: inline-block;
+    width: 120px;
+}
+.btn{
+    border: 1px solid royalblue;
+    border-radius: 20%;
+    background-color: lightblue;
+    margin: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+    opacity: 0.68;
+}
+.list{
+    list-style: none;
+    margin-left: -2em;
+}

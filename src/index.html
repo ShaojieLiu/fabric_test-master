@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style media="screen">
+        *{
+            outline: 1px dashed blue;
+        }
+        .mainview{
+            position: relative;
+        }
+        .canvas-dad{
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            /*transform: translateY(-100px);*/
+        }
+        /*#canvas{
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="mainview">
+        <p>这是文本</p>
+        <div class="canvas-dad">
+            <canvas id="canvas" width="300" height="300"></canvas>
+        </div>
+        <p>结束</p>
+    </div>
+
+    <script src="https://cdn.bootcss.com/fabric.js/1.7.11/fabric.min.js"></script>
+    <script>
+        var canvas = new fabric.Canvas('canvas');
+
+        var text = new fabric.Text('hello world', {
+            left: 100,
+            top: 100
+        });
+
+        var rect = new fabric.Rect({
+            top : 100,
+            left : 100,
+            width : 60,
+            height : 70,
+            fill : 'red'
+        });
+
+        let items = [rect, text]
+
+        canvas.add(...items);
+    </script>
+
+</body>
+</html>
